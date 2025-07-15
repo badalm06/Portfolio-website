@@ -528,7 +528,6 @@ profile-photo .img{
   align-items: center;
 }
 
-/* 🔹 Mobile styles */
 @media screen and (max-width: 768px) {
   #menu-toggle {
     display: block;
@@ -558,16 +557,19 @@ profile-photo .img{
   }
 
   #nav-menu li a {
-    color: white;
-    font-size: 16px;
-    text-decoration: none;
-  }
-
-  #nav-menu li a:hover {
-    color: #fed700;
-  }
-
+  background: red;  /* test background */
+  border: 1px solid white;
+  padding: 10px;
 }
 
+  /* #nav-menu li a {
+    color: white !important;
+    font-size: 16px !important;
+    text-decoration: none;
+    display: block !important;
+  } */
 
-
+  #nav-menu li a:hover {
+    color: #fed700 !important;
+  }
+}
