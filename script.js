@@ -72,21 +72,9 @@ $(document).ready(function() {
 // Toggle menu on hamburger click
 $('#menu-toggle').click(function (e) {
     e.stopPropagation();
-
-    const navMenu = $('#nav-menu');
-
-    if (navMenu.hasClass('active')) {
-        navMenu.removeClass('active');
-    } else {
-        // First remove it forcefully to reset state
-        navMenu.removeClass('active');
-
-        // Small delay to allow reflow
-        setTimeout(() => {
-            navMenu.addClass('active');
-        }, 10);
-    }
+    $('#nav-menu').toggleClass('active');
 });
+
 
 // Hide menu when clicking any nav link
 $('#nav-menu a').click(function () {

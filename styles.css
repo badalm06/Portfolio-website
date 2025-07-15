@@ -519,6 +519,8 @@ profile-photo .img{
   font-size: 28px;
   cursor: pointer;
   color: #fff;
+  z-index: 1001;
+  position: relative;
 }
 
 /* 🔹 Desktop: Show nav normally */
@@ -557,17 +559,12 @@ profile-photo .img{
   }
 
   #nav-menu li a {
-  background: red;  /* test background */
-  border: 1px solid white;
-  padding: 10px;
+  color: white !important;
+  font-size: 16px !important;
+  text-decoration: none;
+  display: block !important;
 }
 
-  /* #nav-menu li a {
-    color: white !important;
-    font-size: 16px !important;
-    text-decoration: none;
-    display: block !important;
-  } */
 
   #nav-menu li a:hover {
     color: #fed700 !important;
