@@ -75,12 +75,12 @@ $('#nav-menu a').click(function () {
     $('#nav-menu').removeClass('active');
 });
 
-// Hide menu when clicking outside the nav or toggle
-$(document).click(function (e) {
-    if (!$(e.target).closest('#nav-menu, #menu-toggle').length) {
-        $('#nav-menu').removeClass('active');
-    }
-});
+// // Hide menu when clicking outside the nav or toggle
+// $(document).click(function (e) {
+//     if (!$(e.target).closest('#nav-menu, #menu-toggle').length) {
+//         $('#nav-menu').removeClass('active');
+//     }
+// });
 
 
 
