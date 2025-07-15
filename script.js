@@ -64,6 +64,28 @@ $(document).ready(function() {
       origin: "bottom"
     });
 
+    // Mobile menu toggle
+   // Toggle menu on hamburger click
+$('#menu-toggle').click(function (e) {
+    e.stopPropagation(); // prevent body click from triggering
+    $('#nav-menu').toggleClass('active');
+});
+
+// Hide menu when clicking any link
+$('#nav-menu a').click(function () {
+    $('#nav-menu').removeClass('active');
+});
+
+// Hide menu when clicking outside
+$(document).click(function (e) {
+    const target = $(e.target);
+    if (!target.closest('#nav-menu').length && !target.closest('#menu-toggle').length) {
+        $('#nav-menu').removeClass('active');
+    }
+});
+
+
+
   //contact form to excel sheet
   const scriptURL = 'https://script.google.com/macros/s/AKfycbyNGObUNNaxbGuH21MNkTjr2-drpAwyKnGvocX3aETtyiJPd5K2u0m_xuY6SVZLPUPz/exec';
   const form = document.forms['submitToGoogleSheet']
