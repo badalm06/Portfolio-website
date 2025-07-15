@@ -553,15 +553,19 @@ profile-photo .img{
     display: flex;
   }
 
-  #nav-menu li a:hover {
-  color: #fed700;
-}
+  #nav-menu li {
+    margin: 10px 0;
+  }
 
   #nav-menu li a {
-  color: white !important;
-  font-size: 16px;
-  text-decoration: none;
-}
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  #nav-menu li a:hover {
+    color: #fed700;
+  }
 
 }
 
