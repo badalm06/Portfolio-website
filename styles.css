@@ -521,7 +521,7 @@ profile-photo .img{
   color: #fff;
 }
 
-/* 🔹 Default: Show nav menu on desktop */
+/* 🔹 Desktop: Show nav normally */
 #nav-menu {
   display: flex;
   gap: 20px;
@@ -530,12 +530,10 @@ profile-photo .img{
 
 /* 🔹 Mobile styles */
 @media screen and (max-width: 768px) {
-  /* Show hamburger icon */
   #menu-toggle {
     display: block;
   }
 
-  /* Hide nav menu initially on mobile */
   #nav-menu {
     display: none;
     flex-direction: column;
@@ -543,15 +541,14 @@ profile-photo .img{
     position: absolute;
     top: 70px;
     right: 20px;
-    left: 20px; /* <-- Add this line to push it away from the edge */
+    left: 20px;
     background-color: #111;
     padding: 20px;
     border-radius: 8px;
     z-index: 999;
-    width: calc(100% - 40px); /* Optional: Makes it nicely spaced from both sides */
+    width: calc(100% - 40px);
   }
 
-  /* When hamburger is toggled */
   #nav-menu.active {
     display: flex;
   }
@@ -566,5 +563,6 @@ profile-photo .img{
     text-decoration: none;
   }
 }
+
 
 

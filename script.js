@@ -64,25 +64,24 @@ $(document).ready(function() {
       origin: "bottom"
     });
 
-    // Mobile menu toggle
-   // Toggle menu on hamburger click
+// Toggle menu on hamburger click
 $('#menu-toggle').click(function (e) {
-    e.stopPropagation(); // prevent body click from triggering
+    e.stopPropagation();
     $('#nav-menu').toggleClass('active');
 });
 
-// Hide menu when clicking any link
+// Hide menu when clicking any nav link
 $('#nav-menu a').click(function () {
     $('#nav-menu').removeClass('active');
 });
 
-// Hide menu when clicking outside
+// Hide menu when clicking outside the nav or toggle
 $(document).click(function (e) {
-    const target = $(e.target);
-    if (!target.closest('#nav-menu').length && !target.closest('#menu-toggle').length) {
+    if (!$(e.target).closest('#nav-menu, #menu-toggle').length) {
         $('#nav-menu').removeClass('active');
     }
 });
+
 
 
 
