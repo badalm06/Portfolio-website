@@ -2,12 +2,16 @@ $(document).ready(function() {
 
   //sticky header
     $(window).scroll(function() {
+      const navMenu = $('#nav-menu');
+    const wasActive = navMenu.hasClass('active');
+
       if ($(this).scrollTop() > 1) {
         $(".header-area").addClass("sticky");
       } else {
         $(".header-area").removeClass("sticky");
       }
-  
+    
+      
       // Update the active section in the header
       updateActiveSection();
     });
@@ -54,8 +58,9 @@ $(document).ready(function() {
     ScrollReveal().reveal(".header a, .profile-photo, .about-content, .education", {
       origin: "left"
     });
-    ScrollReveal().reveal(".header ul, .profile-text, .about-skills, .internship", {
-      origin: "right"
+    ScrollReveal().reveal(".profile-text, .about-skills, .internship", {
+      origin: "right",
+      reset: false
     });
     ScrollReveal().reveal(".project-title, .contact-title", {
       origin: "top"
@@ -66,21 +71,22 @@ $(document).ready(function() {
 
 // Toggle menu on hamburger click
 $('#menu-toggle').click(function (e) {
-    e.stopPropagation();
-    $('#nav-menu').toggleClass('active');
+  e.stopPropagation();
+  $('#nav-menu').toggleClass('active');
 });
+
 
 // Hide menu when clicking any nav link
 $('#nav-menu a').click(function () {
     $('#nav-menu').removeClass('active');
 });
 
-// // Hide menu when clicking outside the nav or toggle
-// $(document).click(function (e) {
-//     if (!$(e.target).closest('#nav-menu, #menu-toggle').length) {
-//         $('#nav-menu').removeClass('active');
-//     }
-// });
+// Hide menu when clicking outside the nav or toggle
+$(document).click(function (e) {
+    if (!$(e.target).closest('#nav-menu, #menu-toggle').length) {
+        $('#nav-menu').removeClass('active');
+    }
+});
 
 
 
