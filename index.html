@@ -254,8 +254,7 @@
                     <i class="fa fa-line-chart"></i>
                     <h4>Fund Trackr - Personal Expense Manager</h4>
                     <p>A clean and beginner-friendly personal finance tracker app built using modern Android tools like Kotlin, 
-                        Jetpack Compose, and Room DB. It helps users manage their income and expenses, apply filters, and view transaction 
-                        history in a beautifully designed Material 3 UI — making budgeting easier and smarter.</p>
+                        Jetpack Compose, and Room DB.</p>
                     <a href="https://play.google.com/store/apps/details?id=com.badal.fundtrackr&pcampaignid=web_share" target="_blank" class="github-btn">View on PlayStore</a>
                 </div>
                 <!-- 4th Project -->
@@ -295,11 +294,11 @@
                 <p>Get In Touch</p>
             </div>
             <div class="contact">
-                <form name="submitToGoogleSheet">
-                    <input type="text" name="NAME" placeholder="Name" required>
-                    <input type="email" name="EMAIL" placeholder="Email" required>
-                    <input type="text" name="SUBJECT" placeholder="Subject">
-                    <textarea name="MESSAGE" placeholder="Message"></textarea>
+                <form action="https://formspree.io/f/xljdlbdg" method="POST" id="contactForm">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="subject" placeholder="Subject">
+                    <textarea name="message" placeholder="Message" required></textarea>
                     <input type="submit" value="Send Message" class="submit">
                 </form>
                 <span id="msg"></span>

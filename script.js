@@ -91,23 +91,43 @@ $(document).click(function (e) {
 
 
 
-  //contact form to excel sheet
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbyNGObUNNaxbGuH21MNkTjr2-drpAwyKnGvocX3aETtyiJPd5K2u0m_xuY6SVZLPUPz/exec';
-  const form = document.forms['submitToGoogleSheet']
+  //contact form using Formspree
+  const form = document.getElementById('contactForm')
   const msg = document.getElementById("msg")
 
-  form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-          .then(response => {
-              msg.innerHTML = "Message sent successfully"
-              setTimeout(function () {
-                  msg.innerHTML = ""
-              }, 5000)
-              form.reset()
-          })
-          .catch(error => console.error('Error!', error.message))
-  })
+  if (form) {
+      form.addEventListener('submit', async (e) => {
+          e.preventDefault()
+          
+          const formData = new FormData(form)
+          
+          try {
+              const response = await fetch(form.action, {
+                  method: 'POST',
+                  body: formData,
+                  headers: {
+                      'Accept': 'application/json'
+                  }
+              })
+              
+              if (response.ok) {
+                  msg.innerHTML = "Message sent successfully!"
+                  msg.style.color = "#4CAF50"
+                  form.reset()
+                  setTimeout(() => {
+                      msg.innerHTML = ""
+                  }, 5000)
+              } else {
+                  msg.innerHTML = "Oops! There was a problem sending your message."
+                  msg.style.color = "#f44336"
+              }
+          } catch (error) {
+              msg.innerHTML = "Oops! There was a problem sending your message."
+              msg.style.color = "#f44336"
+              console.error('Error!', error)
+          }
+      })
+  }
     
   });
   
